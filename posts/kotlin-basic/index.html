@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="ko-KR" data-mode="dark" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.3.1" /><meta property="og:title" content="Kotlin Introduction" /><meta name="author" content="kimjeahyun" /><meta property="og:locale" content="ko_KR" /><meta name="description" content="What is Kotlin?" /><meta property="og:description" content="What is Kotlin?" /><link rel="canonical" href="https://thecordrecode.github.io/posts/kotlin-basic/" /><meta property="og:url" content="https://thecordrecode.github.io/posts/kotlin-basic/" /><meta property="og:site_name" content="코딩기록소" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2022-11-12T00:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Kotlin Introduction" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"kimjeahyun"},"dateModified":"2022-11-12T00:00:00+09:00","datePublished":"2022-11-12T00:00:00+09:00","description":"What is Kotlin?","headline":"Kotlin Introduction","mainEntityOfPage":{"@type":"WebPage","@id":"https://thecordrecode.github.io/posts/kotlin-basic/"},"url":"https://thecordrecode.github.io/posts/kotlin-basic/"}</script><title>Kotlin Introduction | 코딩기록소</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="코딩기록소"><meta name="application-name" content="코딩기록소"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/img/info.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/">코딩기록소</a></div><div class="site-subtitle font-italic">서버,인프라,개발,구축,데이터베이스 다양한 기술 기록</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>홈</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>카테고리</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>태그</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>아카이브</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>정보</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <a href="https://github.com/thecordrecode" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['thecordrecode','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> 홈 </a> </span> <span>Kotlin Introduction</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> 포스트</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="검색..."> </span> <span id="search-cancel" >취소</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>Kotlin Introduction</h1><div class="post-meta text-muted"> <span> 게시 <em class="" data-ts="1668178800" data-df="YYYY/MM/DD" data-toggle="tooltip" data-placement="bottom"> 2022/11/12 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href=""></a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1048 단어"> <em>5 분</em>읽는 시간</span></div></div></div><div class="post-content"><h1 id="what-is-kotlin">What is Kotlin?</h1><p>Kotlin is a modern, trending programming language that was released in 2016 by JerBrains.</p><p>It has become very popular since it is compatible with java , which means that Java code can be used in kotlin programs.</p><p>Kotlin is used for:</p><ul><li>Mobile applications<li>Web development<li>Server side Applications<li>Data science<li>And much, much more!</ul><h1 id="why-use-kotlin">Why Use Kotlin?</h1><ul><li>Kotlin is fully compatible with Java<li>Kotlin works on different platforms ( windows, Mac, Linux , Raspberry pi, etc.)<li>Kotlin is concise and safe<li>Kotlin is easy to learn , expecially If you already know Java<li>Kotlin is free to use<li>Big Community/support</ul><h1 id="kotlin-syntax">Kotlin Syntax</h1><p>In the previous chapter, we created a kotlin file called Main.kt, and we used the following code to print hello world to the screen:</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></table></code></div></div><ul><li><p>The func keyword is used to declare a function. A function is a block of code designed to perform a particular task. In the example above, it declares the main() function</p><li><p>The main() function is something you will see in every kotlin program. This function is used to execute code. Any code inside the main() function’s curly brackets {} will be executed.</p><li><p>For example, the println() function is inside the main() function, meaning that this will be executed. The println() function is used to output/print text, and in our example it will output hello world.</p></ul><h1 id="kotlin-comments">kotlin Comments</h1><p>Comments can be used to explain Kotlin code, and to make it more readable. It can also be used to prevent execution when testing alternative code.</p><h1 id="single-line-comments">Single-line comments</h1><p>Single-line comments starts with two forward slashes // any text between // and the end of the line is ignored by kotlin This example uses a single-line comment before a line of code:</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="c1">//This is a comment</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"Hello world"</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="muti-line-comments">Muti-line comments</h1><p>Multi-line comments start with /* and ends with */</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="cm">/* this is multiple comments */</span>
+</pre></table></code></div></div><h1 id="kotlin-variables">Kotlin Variables</h1><p>Variables are containers for storing data values. To Create a variable, use var or val, and assign a value to it with the equal sign =</p><p>Syntax</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="py">variableName</span> <span class="p">=</span> <span class="n">value</span>
+<span class="kd">val</span> <span class="py">variableName</span> <span class="p">=</span> <span class="n">value</span>
+</pre></table></code></div></div><p>Example</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="py">name</span> <span class="p">=</span> <span class="s">"kim jae hyeong"</span>
+<span class="kd">val</span> <span class="py">birthyear</span> <span class="p">=</span> <span class="mi">1995</span>
+
+<span class="nf">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="nf">println</span><span class="p">(</span><span class="n">birthyear</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="variable-type">Variable Type</h1><p>unlike many other programming languages, variables in kotlin do not need to be declared with a specified type</p><p>To create a variable in kotlin that should store text and another that should store a number, look at the following example.</p><p>When you create a variable with val keyword, you cannot be changed value</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="cm">/*
+* Date : 2022-11-12
+* Author : Kim Jae Hyeon
+* Content : This is main Function which is executing Output text of Hello word!
+* */</span>
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="py">userName</span><span class="p">:</span><span class="nc">String</span> <span class="p">=</span> <span class="s">"kim jae hyeong"</span>
+    <span class="kd">var</span> <span class="py">age</span><span class="p">:</span><span class="nc">Int</span> <span class="p">=</span> <span class="mi">28</span>
+
+    <span class="nf">println</span><span class="p">(</span><span class="s">"My name is $userName , My age is $age"</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+</pre></table></code></div></div><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre>
+<span class="cm">/*
+* Date : 2022-11-12
+* Author : kim jae hyeong
+* content : This is function for studying about data Type
+* */</span>
+<span class="k">fun</span> <span class="nf">exampleDataType</span><span class="p">(){</span>
+
+    <span class="kd">var</span> <span class="py">myNum</span><span class="p">:</span><span class="nc">Int</span> <span class="p">=</span> <span class="mi">5</span>
+    <span class="kd">var</span> <span class="py">myDoubleNum</span><span class="p">:</span><span class="nc">Double</span> <span class="p">=</span> <span class="mf">5.99</span>
+    <span class="kd">var</span> <span class="py">myLetter</span><span class="p">:</span><span class="nc">Char</span> <span class="p">=</span> <span class="sc">'A'</span>
+    <span class="kd">var</span> <span class="py">myBoolean</span><span class="p">:</span><span class="nc">Boolean</span> <span class="p">=</span> <span class="k">true</span>
+    <span class="kd">var</span> <span class="py">myText</span><span class="p">:</span><span class="nc">String</span> <span class="p">=</span> <span class="s">"Hello"</span>
+
+<span class="p">}</span>
+
+
+</pre></table></code></div></div><h1 id="kotlin-strings">Kotlin Strings</h1><p>Kotlin Strings</p><p>Strings are used for storing text.</p><p>A String contains a collection of characters surrounded by double quotes</p><h1 id="string-length">String length</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="py">txt</span> <span class="p">=</span> <span class="s">"Kotlin is easy to learn and so funny "</span>
+<span class="nf">println</span><span class="p">(</span><span class="s">"length of txt is "</span><span class="p">+</span><span class="n">txt</span><span class="p">.</span><span class="n">length</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="string-functions">String Functions</h1><p>There are many strings functions available, for example toUpperCase() and toLowerCase()</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">stringUpperAndLowerExample</span><span class="p">(</span><span class="n">txt</span><span class="p">:</span><span class="nc">String</span><span class="p">){</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"original Txt: $txt"</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"upper: "</span><span class="p">+</span><span class="n">txt</span><span class="p">.</span><span class="nf">uppercase</span><span class="p">())</span>
+    <span class="nf">println</span><span class="p">(</span><span class="s">"loower: "</span><span class="p">+</span><span class="n">txt</span><span class="p">.</span><span class="nf">lowercase</span><span class="p">())</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h1 id="comparing-strings">Comparing Strings</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>
+<span class="k">fun</span> <span class="nf">comparingFunc</span><span class="p">(</span><span class="n">txt</span><span class="p">:</span><span class="nc">String</span><span class="p">,</span><span class="n">txt_2</span><span class="p">:</span><span class="nc">String</span><span class="p">):</span> <span class="nc">Boolean</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">txt</span><span class="p">.</span><span class="nf">compareTo</span><span class="p">(</span><span class="n">txt_2</span><span class="p">)</span> <span class="p">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">true</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="k">false</span>
+<span class="p">}</span>
+
+</pre></table></code></div></div><h1 id="finding-a-string-in-a-string">Finding a String in a String</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">FindingString</span><span class="p">(</span><span class="n">txt</span><span class="p">:</span><span class="nc">String</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="py">txt1</span> <span class="p">=</span> <span class="s">"Please locate where occurs!"</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">txt1</span><span class="p">.</span><span class="nf">indexOf</span><span class="p">(</span><span class="n">txt</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h1 id="kotlin-if">Kotlin if</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="k">if</span><span class="p">(</span><span class="n">condition1</span><span class="p">){</span>
+    <span class="c1">// block of code to be executed if conditional is true</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">condition2</span><span class="p">){</span>
+
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+
+<span class="p">}</span>
+</pre></table></code></div></div><h1 id="kotlin-when">Kotlin When</h1><p>instead of writing many if…else expressions, you can use the when expression , which is much easier to read.</p><p>it is used to select one of many code blocks to be executed:</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="k">fun</span> <span class="nf">findDay</span><span class="p">(</span><span class="n">number</span><span class="p">:</span><span class="nc">Int</span><span class="p">):</span><span class="nc">String</span><span class="p">{</span>
+    <span class="kd">var</span> <span class="py">result</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">number</span><span class="p">){</span>
+        <span class="mi">1</span> <span class="p">-&gt;</span> <span class="s">"Monday"</span>
+        <span class="mi">2</span> <span class="p">-&gt;</span> <span class="s">"Tuesday"</span>
+        <span class="mi">3</span> <span class="p">-&gt;</span> <span class="s">"Wednesday"</span>
+        <span class="k">else</span> <span class="p">-&gt;</span> <span class="s">"Invalid Day"</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h1 id="kotlin-while-loop">Kotlin While Loop</h1><p>Loops</p><p>Loops can execute a block of code as long as a specified condition is reached.</p><p>Loops are handy becauses they save time, reduce errors, and they make code more readable.</p><h1 id="kotlin-while-loop-1">Kotlin while Loop</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">){</span>
+    <span class="c1">//code block to a be executed</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h1 id="kotlin-break-and-continue">Kotlin break and continue</h1><p>Kotlin Break</p><p>The break statement is used to jump out of a loop.</p><p>Kotlin continue</p><p>The continue statement breaks one iteration, if a specified condition occurs, and continues with the next iteration in the loop.</p><h1 id="kottlin-array">Kottlin array</h1><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="py">cars</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"good"</span><span class="p">,</span><span class="s">"good job"</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="kotlin-for-loop">kotlin For Loop</h1><p>Kotlin For Loop</p><p>Often when you work with arrays , you need to loop through all of the elements.</p><p>To loop through array elements, use the for loop together with the in operator:</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="kd">var</span> <span class="py">cars</span> <span class="p">=</span> <span class="nf">arrayOf</span><span class="p">(</span><span class="s">"Volvo"</span><span class="p">,</span><span class="s">"BMW"</span><span class="p">,</span><span class="s">"Ford"</span><span class="p">,</span><span class="s">"MazDa"</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="n">cars</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></table></code></div></div><h1 id="kotlin-classes-and-objects">Kotlin Classes and Objects</h1><p>Kotlin Classes / Objects</p><p>Everything in kotlin is associated with classes and objects , along with its properties and functions. For example : in real life, a car is an object. The car has properties, such as brand, weight and color, and functions, such as drive and brake.</p><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Car</span><span class="p">{</span>
+    <span class="kd">var</span> <span class="py">brand</span> <span class="p">=</span> <span class="s">""</span>
+    <span class="kd">var</span> <span class="py">model</span> <span class="p">=</span> <span class="s">""</span>
+    <span class="kd">var</span> <span class="py">year</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="p">}</span>
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="py">c1</span> <span class="p">=</span> <span class="nc">Car</span><span class="p">()</span>
+    <span class="n">c1</span><span class="p">.</span><span class="n">brand</span> <span class="p">=</span> <span class="s">"Ford"</span>
+    <span class="n">c1</span><span class="p">.</span><span class="n">model</span> <span class="p">=</span> <span class="s">"Mustang"</span>
+    <span class="n">c1</span><span class="p">.</span><span class="n">year</span> <span class="p">=</span> <span class="mi">1969</span>
+
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">brand</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">model</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">year</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></table></code></div></div><div class="language-kotlin highlighter-rouge"><div class="code-header"> <span data-label-text="Kotlin"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">Car</span><span class="p">(</span><span class="kd">var</span> <span class="py">brand</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span><span class="kd">var</span> <span class="py">model</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="kd">var</span> <span class="py">year</span><span class="p">:</span><span class="nc">Int</span><span class="p">){</span>
+<span class="p">}</span>
+<span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="py">c1</span> <span class="p">=</span> <span class="nc">Car</span><span class="p">(</span><span class="s">"Ford"</span><span class="p">,</span><span class="s">"Mustang"</span><span class="p">,</span><span class="mi">1969</span><span class="p">)</span>
+
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">brand</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">model</span><span class="p">)</span>
+    <span class="nf">println</span><span class="p">(</span><span class="n">c1</span><span class="p">.</span><span class="n">year</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/languages-for-development/'>Languages for development</a>, <a href='/categories/kotlin/'>Kotlin</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/languages-for-development/" class="post-tag no-text-decoration" >Languages for development</a> <a href="/tags/kotlin/" class="post-tag no-text-decoration" >Kotlin</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> 이 기사는 저작권자의 <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> 라이센스를 따릅니다.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">공유하기</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=Kotlin+Introduction+-+%EC%BD%94%EB%94%A9%EA%B8%B0%EB%A1%9D%EC%86%8C&url=https%3A%2F%2Fthecordrecode.github.io%2Fposts%2Fkotlin-basic%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=Kotlin+Introduction+-+%EC%BD%94%EB%94%A9%EA%B8%B0%EB%A1%9D%EC%86%8C&u=https%3A%2F%2Fthecordrecode.github.io%2Fposts%2Fkotlin-basic%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fthecordrecode.github.io%2Fposts%2Fkotlin-basic%2F&text=Kotlin+Introduction+-+%EC%BD%94%EB%94%A9%EA%B8%B0%EB%A1%9D%EC%86%8C" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="링크 복사하기" data-title-succeed="링크가 복사되었습니다!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">최근 업데이트</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/Adam-Levine-Lost-Starts/">Adam Levine - Lost Stars</a><li><a href="/posts/Tom_Misch_Movie/">Tom Misch - Movie</a><li><a href="/posts/database-maria-base/">MariaDB 기초모음</a><li><a href="/posts/database-maria-changePassword/">MariaDB root 비밀번호 변경</a><li><a href="/posts/database-maria-create-user/">MariaDB 유저생성</a></ul></div><div id="access-tags"><div class="panel-heading">인기 태그</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/languages-for-development/">Languages for development</a> <a class="post-tag" href="/tags/java/">Java</a> <a class="post-tag" href="/tags/css/">CSS</a> <a class="post-tag" href="/tags/cpp/">Cpp</a> <a class="post-tag" href="/tags/algorithm/">Algorithm</a> <a class="post-tag" href="/tags/installation-guide/">Installation guide</a> <a class="post-tag" href="/tags/datastructure/">DataStructure</a> <a class="post-tag" href="/tags/javascript/">JavaScript</a> <a class="post-tag" href="/tags/song/">Song</a> <a class="post-tag" href="/tags/common-of-knowledge/">common of knowledge</a></div></div></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5"><div id="related-posts" class="mb-2 mb-sm-4"><h3 class="pt-2 mb-4 ml-1" data-toc-skip>관련된 글</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/java-while/"><div class="card-body"> <em class="small" data-ts="1659229200" data-df="YYYY/MM/DD" > 2022/07/31 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바-반복문</h3><div class="text-muted small"><p> 반복문 반복문은 여러번의 작업이 필요시 될 때 사용되는 문법이다. 반복문의 종류 for문 while문 do-while문 향상된 for문 선언형태 for문 for(int i=1; i&amp;lt;=5; i++){ //1부터 5까지 반복되는 반복문 } while문 while(조건식){ //조...</p></div></div></a></div><div class="card"> <a href="/posts/java-class/"><div class="card-body"> <em class="small" data-ts="1659438000" data-df="YYYY/MM/DD" > 2022/08/02 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바-함수 및 클래스</h3><div class="text-muted small"><p> 함수 어떠한 작업을 수행할때 한곳에 집합되어 실행되는 코드 함수를 사용하는 이유는? 재사용성이 높다. 중복된 코드를 제거 할수있다. 프로그램을 구조화 할수 있다. 선언방법 반환타입 함수이름(타입 변수명, 타입 변수명...){ //수행될 코드 } Class 지금까지 공부를 해오면서 알게 모르게 클래스를 살짝 살짝 보...</p></div></div></a></div><div class="card"> <a href="/posts/java-overloading/"><div class="card-body"> <em class="small" data-ts="1659438000" data-df="YYYY/MM/DD" > 2022/08/02 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자바-오버로딩</h3><div class="text-muted small"><p> 오버로딩(overloading) 오버로딩 이란? 우리가 함수를 작성할때 Method 라는 함수가 존재할때. 같은 이름을 중복하여 작성하는 것이다. 단 같은 이름이라 하더라도 매겨변수 및 반환 타입이 다를떄만 작성이 가능하다. 정리하면 다음과 같다. 함수의 이름이 같아야 한다. 매겨변수 및 타입이 중복되면 안된다. 클래스,함수,오버로딩...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Python-basic/" class="btn btn-outline-primary" prompt="이전 글"><p>Python - Basic</p></a> <a href="/posts/Bruno_Major-Nothing/" class="btn btn-outline-primary" prompt="다음 글"><p>Bruno Major - Nothing</p></a></div></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">인기 태그</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/languages-for-development/">Languages for development</a> <a class="post-tag" href="/tags/java/">Java</a> <a class="post-tag" href="/tags/css/">CSS</a> <a class="post-tag" href="/tags/cpp/">Cpp</a> <a class="post-tag" href="/tags/algorithm/">Algorithm</a> <a class="post-tag" href="/tags/installation-guide/">Installation guide</a> <a class="post-tag" href="/tags/datastructure/">DataStructure</a> <a class="post-tag" href="/tags/javascript/">JavaScript</a> <a class="post-tag" href="/tags/song/">Song</a> <a class="post-tag" href="/tags/common-of-knowledge/">common of knowledge</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://twitter.com/username">thecordrecode</a>. <span data-toggle="tooltip" data-placement="top" title="명시되지 않는 한 이 사이트의 블로그 게시물은 작성자의 Creative Commons Attribution 4.0 International(CC BY 4.0) 라이선스에 따라 사용이 허가되었습니다.">일부 권리 보유</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">코딩기록소 블로그에 오신걸 환영합니다.</p><button type="button" class="btn btn-primary" aria-label="Update"> 확인 </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">검색 결과가 없습니다.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/ko.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>
